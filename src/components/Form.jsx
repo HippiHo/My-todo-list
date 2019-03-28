@@ -12,7 +12,9 @@ class Form extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(`Create new item: ${this.inputText.current.value}`);
+    const text = this.inputText.current.value.trim();
+    this.props.addToDo(text);
+    e.currentTarget.reset();
   };
 
   render() {
