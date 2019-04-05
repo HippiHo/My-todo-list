@@ -19,7 +19,10 @@ class Form extends Component {
 
   render() {
     return (
-      <form className="input-group my-3" onSubmit={this.handleSubmit}>
+      <form
+        className="input-group my-3 task-input"
+        onSubmit={this.handleSubmit}
+      >
         <input
           className="form-control"
           type="text"
@@ -27,8 +30,8 @@ class Form extends Component {
           ref={this.inputText}
         />
         <div className="input-group-append">
-          <button className="btn btn-outline-danger" type="submit">
-            <i className="fas fa-plus" aria-hidden="true" />
+          <button className="btn btn-outline-danger" type="submit" title="pin">
+            <i className="fas fa-map-pin" aria-hidden="true" />
           </button>
         </div>
       </form>

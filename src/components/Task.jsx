@@ -29,7 +29,7 @@ class Task extends Component {
               &nbsp;
             </label>
           </div>
-          <div className="col-9">
+          <div className="col-10">
             <input
               type="text"
               className="form-control"
@@ -44,7 +44,8 @@ class Task extends Component {
           </div>
           <div className="col-action col-1">
             <i
-              className="icon-remove far fa-trash-alt"
+              className="icon-remove fas fa-fire-alt"
+              title="burn"
               onClick={e => this.props.removeTask(todo.uuid)}
             />
           </div>

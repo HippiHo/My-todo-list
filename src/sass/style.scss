@@ -25,45 +25,55 @@ body {
   }
 }
 
+.task-input {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .todo-list {
   width: 100%;
 }
 
 .tasks {
   margin-top: 1rem;
+  max-width: 60%;
+  margin: 0 auto;
 }
 
 .task {
   padding: 1rem;
   margin-bottom: 1rem;
+  height: auto;
 
   &:hover {
-    background-color: #efefef;
+    background-color: #fff388;
   }
 
-  .row .custom-checkbox {
+  .row {
     margin-left: 1rem;
   }
 
-  // td.col-action {
-  //   text-align: right;
-  //   padding-right: 0.25rem;
+  .col-action {
+    text-align: center;
 
-  //   .icon-remove {
-  //     color: #c0c0c0;
-  //     cursor: pointer;
-  //     padding: 0 0.25rem;
+    .icon-remove {
+      cursor: pointer;
+      font-size: 1.25rem;
+      font-weight: 550;
+      color: darkgray;
 
-  //     &:hover {
-  //       color: #bd2d2d;
-  //     }
-  //   }
-  // }
+      &:hover {
+        color: red;
+      }
+    }
+  }
 
-  // input[type="text"] {
-  //   border: 1px solid transparent;
-  //   padding: 0 0.25rem;
-  //   width: 98%;
-  //   height: auto;
-  // }
+  input[type="text"] {
+    border: 1px solid transparent;
+    padding: 0 0.25rem;
+    width: 100%;
+
+    // Doesn't fit the text yet.
+    height: auto;
+  }
 }
