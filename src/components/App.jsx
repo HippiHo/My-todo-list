@@ -4,20 +4,34 @@ import Form from "./Form";
 import TodoList from "./TodoList";
 import { getRandomTagline } from "../helpers";
 import uuid from "uuid/v4";
+import Storage from "../modules/Storage";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      tasks: {}
-    };
+    this.storageKey = "react-todo";
+    const old = Storage.get(this.storageKey);
+
+    if (old) {
+      this.state = JSON.parse(old);
+    } else {
+      this.state = {
+        tasks: {}
+      };
+
+      Storage.set(this.storageKey, JSON.stringify(this.state));
+    }
   }
 
   componentWillMount() {
     this.setState({
       headline: getRandomTagline()
     });
+  }
+
+  componentDidUpdate() {
+    Storage.set(this.storageKey, JSON.stringify(this.state));
   }
 
   addToDo = text => {
