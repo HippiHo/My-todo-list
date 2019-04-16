@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import Form from "./Form";
+import Filter from "./Filter";
 import TodoList from "./TodoList";
 import { getRandomTagline } from "../helpers";
 import uuid from "uuid/v4";
@@ -73,13 +74,22 @@ class App extends Component {
     });
   };
 
+  setFilter = filter => {
+    this.setState(state => {
+      state.filter = filter;
+      return state;
+    });
+  };
+
   render() {
     return (
       <div className="container">
         <Header tagline={this.state.headline} />
         <Form addToDo={this.addToDo} />
+        <Filter activeFilter={this.state.filter} setFilter={this.setFilter} />
         <TodoList
           tasks={this.state.tasks}
+          filter={this.state.filter}
           updateText={this.updateText}
           toggleDone={this.toggleDone}
           removeTask={this.removeTask}
